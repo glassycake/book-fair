@@ -33,7 +33,12 @@ modalAuthor.style.color = "black"
 
 // Close Button //
 document.getElementById('modal-close-btn').addEventListener("click", function(){
-    modal.style.display = "none"
+    modal.style.display = "none",
+    
+    function(){
+        let video =  modalVideo
+        video.contentWindow.postMessage( '{"event":"command", "func":"stopVideo", "args":""}', '*');
+    }
 })
 
 
